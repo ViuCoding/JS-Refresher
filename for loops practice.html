@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOR LOOPS</title>
+  </head>
+  <body>
+    <h1>FOR LOOPS PRACTICE</h1>
+
+    <p id="test1"></p>
+    <p id="test2"></p>
+    <p id="test3"></p>
+    <p id="test4"></p>
+
+    <script>
+
+        // TEST 1, i and j have the same value for the conditional statement
+      let string = "";
+
+      for (i = 1; i <= 5; i++) {
+        for (j = 1; j <= 5; j++) {
+          string += j + " ";
+        }
+        string += "<br>";
+      }
+
+      document.getElementById("test1").innerHTML = string;
+
+
+      // TEST 2, the value to be checked for the conditional statement in the inner loop is i. Basically when i is 1 the inner loop runs once, then i is 2 the inner loop runs twice and so forth.
+      let string1 = "";
+      for (i = 1; i <= 5; i++) {
+        for (j = 1; j <= i; j++) {
+          string1 += j + " ";
+        }
+
+        string1 += "<br>";
+      }
+
+      document.getElementById("test2").innerHTML = string1;
+      
+      
+      // TEST 3
+      
+      let string2="";
+      
+      for(i= 1; i<=5; i++){
+          for(j=5; j>=i; j--){
+              string2 += j + " ";
+            }
+            
+            string2 += "<br>"
+        }
+        
+        document.getElementById("test3").innerHTML = string2;
+        
+        </script>
+  </body>
+</html>
