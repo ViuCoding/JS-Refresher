@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math.random</title>
+  </head>
+  <body>
+    <h1>Math.random()</h1>
+
+    <script>
+      // We want to generate a number between 1 & 10, how do we do it?
+
+      // Step 1
+      Math.random(); // This generates a decimal number between 0 and 0.9999999999
+
+      // Step 2
+      Math.random() * 10; // We move the decimal point one step to the left and we can now generate number between 0 and 9.9999999
+
+      // Step 3
+      Math.floor(Math.random * 10); // We now round the number to the closest integer (going down) and we get a number between 0 and 9
+
+      //Step 4
+      Math.floor(Math.random * 10) + 1; // We simply shift the result by 1 so we can finally get numbers between 1 and 10 (including both)
+
+      // What if we want to generate a random number between 20 & 24?
+      // We simply calculate the number of "options" that we need, in this case 5 numbers (20,21,22,23,24)
+      // We then shift the operation by the "starting number", in this case 20
+
+      Math.floor(Math.random() * 5) + 20;
+
+      // Et voilà, we get a number between 20 & 24 (including both)
+    </script>
+  </body>
+</html>
