@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Filter</title>
+  </head>
+  <body>
+    <h1>Array filter</h1>
+
+    <script>
+      // Let's create a simple array filled with integers.
+      const myArray = [5, 10, 15, 20, 30, 40, 50];
+
+      // We want to create an array with only the values that are greater than 20
+      // We initialize the new array that we want to fill with filtered elements
+      // (number) is the parameter of the arrow function
+      // number > 20 is the statement of the function. If the check returns TRUE, than that value will go inside the new array
+
+      let filteredArray = myArray.filter((number) => number > 20);
+      console.log(filteredArray);
+
+      // Let's do the same but with an array of objects
+
+      const users = [
+        {name: "john", age: 21},
+        {name: "sunny", age: 16},
+        {name: "martino", age: 38},
+        {name: "luigi", age: 18},
+        {name: "mario", age: 18},
+      ];
+
+      // Let's say we want to create a new array with only users whose age is >= 18
+
+      let over18 = users.filter((user) => user.age >= 18);
+      // What is happening here? The arrow function iterates through the array and when the conditional check returns true, the WHOLE OBJECT will go inside the new array
+
+      console.log(over18);
+      // console.log("Over18 is" + over18); <- THIS COMMAND WILL NOT WORK BECAUSE WE ARE TRYING TO CONCATENATE A STRING WITH AN OBJECT
+
+      // If we want only the property value to be returned (instead of the whole object) we need to use Array.map(). We will see that, next time.
+      let onlyNames = over18.map((user) => user.name);
+      // Once again, the function iterates through the array and it will return only the property value that we requested.
+      console.log("Only names is " + onlyNames);
+
+      // Example 2, just in case.
+
+      const users2 = [
+        {name: "john", premium: true},
+        {name: "sunny", premium: false},
+        {name: "martino", premium: false},
+        {name: "luigi", premium: false},
+        {name: "mario", premium: true},
+      ];
+
+      // We want to create an array filled with users who are premium members
+      // So, as we have said earlier, the function will iterate through the array and if the condition is true, the item will go inside the new array.
+
+      let premiumUsers = users2.filter((user) => user.premium); // user.premium is the same as writing user.premium === true
+      console.log(premiumUsers);
+    </script>
+  </body>
+</html>
