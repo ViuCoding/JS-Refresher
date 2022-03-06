@@ -8,6 +8,58 @@
   </head>
   <body>
     <h1>Array Map</h1>
-    <script></script>
+    <script>
+      // So, array.map() works very similarly to array.filter. There are a few differences though.
+      // Sometimes array.map() it is used to create a new array with UPDATED values (withough touching the original array).
+
+      // Example 1
+      // Let's say we want a new array with this values discounted by 50%.
+
+      const prices = [20, 10, 50, 25, 35, 46, 80];
+
+      // We initialize the new array and we call the map() function
+      const halfPrice = prices.map((item) => item / 2);
+      // the values of halfPrice will be [10, 5, 25, 12.5, 17.5, 23, 40];
+
+      // Example 2
+      // Let's say we have an object with multiple keys and we just want to create an array with the values of one single key. How do we do it Watson?
+
+      const products = [
+        {name: "shoes", price: 11},
+        {name: "mouse", price: 15},
+        {name: "keyboard", price: 50},
+        {name: "CPU", price: 40},
+        {name: "monitor", price: 22},
+      ];
+
+      let namesOnly = products.map((item) => item.name);
+      // the value of discountedItems will be ['shoes', 'mouse', 'keyboard', 'CPU', 'monitor'];
+
+      // Example 3
+      // Using the same array above (products). Let's say we want to discount the price to 50% of only the items whose price is above 30.
+
+      let discountedProducts = products.map((product) => {
+        if (product.price > 30) {
+          return {name: product.name, price: product.price / 2};
+        } else {
+          return product; // If we omit this line, the objects whose price is less than 30 will return as undefined inside the new array.
+        }
+      });
+
+      // Example 4
+
+      // Let's say we want to create a new array with the full name of the people in the persons array.
+
+      const persons = [
+        {firstname: "Malcom", lastname: "Reynolds"},
+        {firstname: "Kaylee", lastname: "Frye"},
+        {firstname: "Jayne", lastname: "Cobb"},
+      ];
+
+      // The function iterates through the array, gets the first name and last name and it "joins" them with an empty space.
+      let fullNames = persons.map((person) => [person.firstname, person.lastname].join(" "));
+
+      // Full function instead of arrow function.
+    </script>
   </body>
 </html>
