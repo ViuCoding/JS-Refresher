@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WHILE LOOPS PRACTICE</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>WHILE LOOPS PRACTICE</h1>
-    
 
     <script>
+      let randomWord = "asd";
+      let keepGoing = true;
+      let guess;
+      let chances = 0;
 
-        let randomWord = "asd"
-        let keepGoing = true;
-        let guess;
-        let chances = 0;
+      while (keepGoing) {
+        chances++;
+        guess = prompt("Guess the word.");
 
-        while(keepGoing){
-            chances++;
-            guess = prompt("Guess the word.")
-
-            if(guess === randomWord && chances <= 3){
-                keepGoing = false;
-                alert("You won, it took you " + chances + " tries.");
-            }
-            else if (chances > 2){
-                keepGoing = false;
-                alert("you lost son");
-            }
-            
+        if (guess === randomWord && chances <= 3) {
+          keepGoing = false;
+          alert("You won, it took you " + chances + " attempt/s.");
+        } else if (chances > 2) {
+          keepGoing = false;
+          alert("you lost son");
         }
-        alert("loop over")
-        
+      }
+      alert("loop over");
     </script>
-</body>
+  </body>
 </html>
