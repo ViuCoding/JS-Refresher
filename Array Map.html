@@ -40,7 +40,7 @@
 
       let discountedProducts = products.map((product) => {
         if (product.price > 30) {
-          return {name: product.name, price: product.price / 2};
+          return {name: product.name, price: product.price / 2}; // We are returning a "new" object because that we want to have in the new array
         } else {
           return product; // If we omit this line, the objects whose price is less than 30 will return as undefined inside the new array.
         }
