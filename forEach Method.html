@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forEach Method</title>
+  </head>
+  <body>
+    <h1>forEach Method</h1>
+    <script>
+      // Example 1
+
+      // The forEach() method is basically a shorter version of the classic for loop. It iterates through the array and does something with it (which is specified by the function)
+      // In this example we are simply adding up every item inside the array in just one line of code, instead of the cluncky for loop
+      const numbers = [5, 10, 15, 20, 25, 30];
+      let sum = 0;
+      numbers.forEach((item) => (sum += item));
+      console.log(sum);
+
+      // Example 2
+
+      // Let's say that we want to simply print out every products.name in the console. EZ
+
+      const products = [
+        { name: "mouse", price: 15 },
+        { name: "keyboard", price: 50 },
+        { name: "CPU", price: 40 },
+        { name: "shoes", price: 11 },
+        { name: "monitor", price: 22 },
+        { name: "mouse pad", price: 5 },
+        { name: "keyboard", price: 250 },
+      ];
+
+      products.forEach((product) => console.log(product.name));
+
+      // In this example we are simply testing each item in the array. If they pass the check the item will be stored in a new array.
+
+      const higherPrices = [];
+
+      products.forEach((product) => {
+        if (product.price > 15) {
+          higherPrices.push(product.price);
+        }
+      });
+
+      console.log(higherPrices);
+    </script>
+  </body>
+</html>
