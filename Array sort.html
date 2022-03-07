@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array sort</title>
+  </head>
+  <body>
+    <h1>Array sort</h1>
+
+    <script>
+      // Example 1
+      // We want to sort an array of strings, alphabetically. The array.sort() method works well with strings straight out of the box, we don't need any other function to make it work.
+      // Remember that sort() is a destructive method, so it will modify the original array, it won't create a new one.
+
+      const names = ["Mario", "Luigi", "Martino", "Zorro", "Osvaldo", "Antonimina"];
+      names.sort();
+      console.log(names);
+
+      // If we wanna now sort it from Z to A, we just use the reverse() method on the already sorted array.
+      names.reverse();
+      console.log(names);
+
+      // Example 2
+      // What is we wanna sort an array of numbers? It won't work as well because we need a compare function, or the sort() method will only take into account the first digit of the number to sort
+
+      const numbers = [5, 50, 10, 25, 20, 33, 11];
+      //numbers.sort();
+      //console.log(numbers);
+      // The result will be [10, 11, 20, 25, 33, 5, 50]. Even though 5 is the smallest number the sort() method won't catch it.
+      // The sort method see the numbers like so: [1, 1, 2, 2, 3, 5, 5]
+
+      // So to make it work we need this Compare function.
+      // Sort numbers in ascending order:
+
+      numbers.sort((a, b) => a - b);
+      console.log(numbers);
+
+      // a, b are basically consecutive pairs of array elements. If the result is negative it means that a is smaller than b, so it will go first in the array.
+
+      // Sort numbers in descending order:
+
+      //numbers.sort((a, b) => b - a);
+      //console.log(numbers);
+
+      // Same as above, if the result is positive it means that b is bigger than a, so b will go first in the array.
+
+      // To find the lowest value if we have sorted in ascending order will simply be the first position in the array.
+      // To find the highest value if we have sorted in ascending order will simply be the last position in the array.
+      // We simply do the opposite if the array is sorted in descending order.
+      console.log(numbers[0]);
+      console.log(numbers[numbers.length - 1]);
+    </script>
+  </body>
+</html>
