@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Find</title>
+  </head>
+  <body>
+    <h1>Array Find</h1>
+
+    <script>
+      // Example 1
+
+      // Let's say we want to find the FIRST score that is higher than a certain amount inside the array scores[]
+      // What find() does is execute the statement inside the callback function and it stops as soon as an item passes the test and returns true.
+      // In this example we are trying to find if there is a score inside the array that is higher than 46.
+      // So the find() method goes through the array and tests the items but it stops as soon as one items satisfies the condition inside the callback function.
+      // 1. [21] doesn't pass the test
+      // 2. [46] doesn't either and the same for [32]
+      // 3. [50] is greater than [46] so it passes the test and returns the value 50
+      // 4. find() will not get to [70] since we have already found an element that passes the test so it stops iterating.
+
+      const scores = [21, 46, 32, 50, 24, 8, 11, 70];
+
+      let firstHighScore = scores.find((score) => score > 46);
+
+      // Example 2
+
+      // In this example we have an array of objects, so if find() returns true it will return the entire object that satisfies the condition of the callback function.
+
+      const products = [
+        { name: "mouse", price: 15 },
+        { name: "keyboard", price: 50 },
+        { name: "CPU", price: 40 },
+        { name: "shoes", price: 11 },
+        { name: "monitor", price: 22 },
+        { name: "mouse pad", price: 5 },
+        { name: "keyboard", price: 250 },
+      ];
+
+      // Let's say we want to check if there is an elemente whose .name is "keyboard". If there is we will get in return the whole object.
+      // As we can see there are 2 items with the name "keyboard", but the find() method stops at the first one since it passes the test.
+
+      let findKeyboard = products.find((item) => item.price === "keyboard");
+
+      // This time we are trying to find an object whose price is less than 15.
+      // The find() method will return the object "shoes" since it is the first element that passes the conditional test.
+      // We will not get to see "mouse pad" since the methos has already stopped at the first item.
+
+      let findCheapItem = products.find((item) => item.price < 15);
+    </script>
+  </body>
+</html>
