@@ -46,11 +46,11 @@
       // Let's say we want to check if there is an elemente whose .name is "keyboard". If there is we will get in return the whole object.
       // As we can see there are 2 items with the name "keyboard", but the find() method stops at the first one since it passes the test.
 
-      let findKeyboard = products.find((item) => item.price === "keyboard");
+      let findKeyboard = products.find((item) => item.name === "keyboard");
 
       // This time we are trying to find an object whose price is less than 15.
       // The find() method will return the object "shoes" since it is the first element that passes the conditional test.
-      // We will not get to see "mouse pad" since the methos has already stopped at the first item.
+      // We will not get to see "mouse pad" since the method has already stopped at the first item.
 
       let findCheapItem = products.find((item) => item.price < 15);
     </script>
