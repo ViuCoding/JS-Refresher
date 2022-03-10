@@ -10,10 +10,10 @@
     <h1>Array Map</h1>
     <script>
       // So, array.map() works very similarly to array.filter. There are a few differences though.
-      // Sometimes array.map() it is used to create a new array with UPDATED values (withough touching the original array).
+      // Sometimes array.map() is used to create a new array with UPDATED values (withough touching the original array).
 
       // Example 1
-      // Let's say we want a new array with this values discounted by 50%.
+      // Let's say we want a new array with these values discounted by 50%.
 
       const prices = [20, 10, 50, 25, 35, 46, 80];
 
@@ -33,14 +33,15 @@
       ];
 
       let namesOnly = products.map((item) => item.name);
-      // the value of discountedItems will be ['shoes', 'mouse', 'keyboard', 'CPU', 'monitor'];
+      console.log(namesOnly)
+      // the value of namesOnly will be ['shoes', 'mouse', 'keyboard', 'CPU', 'monitor'];
 
       // Example 3
       // Using the same array above (products). Let's say we want to discount the price to 50% of only the items whose price is above 30.
 
       let discountedProducts = products.map((product) => {
         if (product.price > 30) {
-          return {name: product.name, price: product.price / 2}; // We are returning a "new" object because that we want to have in the new array
+          return {name: product.name, price: product.price / 2}; // We are returning a "new" object because that is what we want to have in the new array
         } else {
           return product; // If we omit this line, the objects whose price is less than 30 will return as undefined inside the new array.
         }
@@ -58,8 +59,8 @@
 
       // The function iterates through the array, gets the first name and last name and it "joins" them with an empty space.
       let fullNames = persons.map((person) => [person.firstname, person.lastname].join(" "));
+      console.log(fullNames)
 
-      // Full function instead of arrow function.
     </script>
   </body>
 </html>

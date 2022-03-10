@@ -20,7 +20,7 @@
 
       // Example 2
 
-      // Let's say that we want to simply print out every products.name in the console. EZ
+      // Let's say that we want to simply print out every products.name in the console/ on the screen. EZ
 
       const products = [
         { name: "mouse", price: 15 },
@@ -32,7 +32,7 @@
         { name: "keyboard", price: 250 },
       ];
 
-      products.forEach((product) => console.log(product.name));
+      products.forEach((product) => document.write(product.name + "<br>"));
 
       // In this example we are simply testing each item in the array. If they pass the check the item will be stored in a new array.
 
@@ -40,7 +40,7 @@
 
       products.forEach((product) => {
         if (product.price > 15) {
-          higherPrices.push(product.price);
+          higherPrices.push(product); // If we want to push the whole object we return product -- Only the name product.name -- Only the price product.price.
         }
       });
 
