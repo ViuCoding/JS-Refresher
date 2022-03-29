@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for Of - for In</title>
+  </head>
+  <body>
+    <h1>for Of - for In</h1>
+
+    <script>
+      // In this example we use the for loops to iterate through the array names.
+      // With the {for OF loop} in the console we will see each name.
+      // With the {for IN loop} in the console we will see the index position of each value.
+
+      const names = ["Nacho", "Matilde", "Ponyo", "Monchi", "Ercolino"];
+      for (let name of names) {
+        console.log(name);
+      }
+
+      //OUTPUT -> ("Nacho", "Matilde", "Ponyo", "Monchi", "Ercolino")
+
+      for (let index in names) {
+        console.log(index);
+      }
+      //OUTPUT -> (0,1,2,3,4)
+
+      // ITERATING THROUGH AN OBJECT
+
+      const myPC = {
+        cpu: "ryzen",
+        gpu: "gigabyte",
+        ram: "corsair",
+      };
+
+      // WE CANNOT USE for OF with an object
+
+      for (let item in myPC) {
+        console.log(item);
+      }
+      //OUTPUT -> ("cpu", "gpu", "ram")
+    </script>
+  </body>
+</html>
