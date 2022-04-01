@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial algorithm</title>
+  </head>
+  <body>
+    <script>
+      // What is a factorial number? It is obtained by multiplying our chosen number for all the numbers that precede it down to 1.
+      // So 7! =  1 x 2 x 3 x 4 x 6 x 7 OR 7 x 6 x 5 x 4 x 3 x 2 x 1;
+
+      function factorialize(num) {
+        // First cut off, if the number is greater than 0 we can execute the calculation.
+        if (num >= 0) {
+          let result = 1;
+
+          // We set the result to 1 and then we simply start from our number and we go all the way down to 1;
+
+          for (let i = num; i >= 1; i--) {
+            result *= i;
+          }
+          return result;
+        }
+      }
+
+      let factorial = factorialize(5);
+      console.log(factorial);
+    </script>
+  </body>
+</html>
