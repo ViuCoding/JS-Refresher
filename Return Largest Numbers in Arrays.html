@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Largest Numbers in Arrays</title>
+</head>
+
+<body>
+    <h1>Return Largest Numbers in Arrays</h1>
+
+    <script>
+
+        /* Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+         Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i]. */
+
+        // My solution:
+        // 1. Initialize an empty array where we are goin to put all the "max" numbers
+        // 2. Iterate through each sub-array
+        // 3. Find the max num in each sub array and push it to the maxArray
+        // 4. Return maxArray 
+
+
+
+        function largestOfFour(arr) {
+            let result;
+            let maxArray = []
+
+            for (arry of arr) {
+                result = Math.max(...arry);
+                maxArray.push(result)
+            }
+
+
+            return maxArray;
+        }
+
+        let winner = largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]);
+        console.log(winner)
+
+
+    </script>
+</body>
+
+</html>
