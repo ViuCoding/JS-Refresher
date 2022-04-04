@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeat a String Repeat a String</title>
+</head>
+
+<body>
+    <h1>Repeat a String Repeat a String</h1>
+
+    <script>
+        // Repeat a String Repeat a String
+
+        // Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+
+        // My solutioN
+        // 1. Initialize an empty string
+        // 2. If num is a negative number return an empty string
+        // 3. Loop "num" times and contactenate str into freshString
+        // 4. Return freshString which is str repeate num times
+
+        function repeatStringNumTimes(str, num) {
+            let freshString = "";
+            if (num < 0) return "";
+
+            for (let i = 0; i < num; i++) {
+                freshString += str;
+            }
+
+            return freshString;
+        }
+
+        let winner = repeatStringNumTimes("*", 5);
+        console.log(winner)
+    </script>
+
+</body>
+
+</html>
