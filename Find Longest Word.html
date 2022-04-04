@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Longest Word in a String</title>
+</head>
+
+<body>
+    <h1>Find the Longest Word in a String</h1>
+
+
+    <script>
+
+        // How do we solve it?
+        // 1. Put all the words of the string in an array using .split(" ")
+        // 2. Translate all the words to the number of characters with .length
+        // 3. Put all the "lengths" in a new array
+        // 4. Find the "max" number among all the lengths
+        // 5. Simply return that number MATE
+
+
+
+
+        function findLongestWordLength(str) {
+            let splitArray = str.split(" ");
+            let lengthsArray = [];
+
+            for (word of splitArray) {
+                lengthsArray.push(word.length);
+            }
+
+            let solution = Math.max(...lengthsArray);
+
+            return solution;
+        }
+
+        let winner = findLongestWordLength("Google do a barrel roll");
+        console.log(winner)
+
+
+
+    </script>
+</body>
+
+</html>
