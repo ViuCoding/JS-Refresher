@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Case a Sentence</title>
+</head>
+
+<body>
+    <h1>Title Case a Sentence</h1>
+
+    <script>
+        // Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+        // For the purpose of this exercise, you should also capitalize connecting words like The and Of.
+
+        // 1. We first convert every word in the string to lowercase.
+        // 2. We then convert the string into an array and separate each word by a space.
+        // 3. Now we initialize an empty array which will contain the new transformer string.
+        // 4. We loop through each word in the array str.
+        // 5. Inside the loop, we capitalize the first letter of every word and we concatenate it with the rest of the characters in the word through slice.
+        // 6. We push every word to the newString array.
+        // 7. We finally convert the separate words in the array into a string with .join(" ") and return it.
+
+
+
+
+        function titleCase(str) {
+            str = str.toLowerCase();
+            str = str.split(" ");
+
+            let newString = [];
+
+            for (let word of str) {
+                word = word[0].toUpperCase() + word.slice(1, word.length);
+                newString.push(word);
+            }
+
+            newString = newString.join(" ");
+            return newString;
+        }
+
+        console.log(titleCase("I LIKE BIG BUTTS AND I CANNOT LIE"));
+    </script>
+
+</body>
+
+</html>
