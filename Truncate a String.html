@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truncate a String</title>
+</head>
+
+<body>
+    <h1>Truncate a String</h1>
+    <script>
+        // Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+        // EXAMPLE: truncateString("A-tisket a-tasket A green and yellow basket", 8) should return the string A-tisket....
+
+        // 1. If the string has more characters than the num value we actually go ahead with the slicing
+        // 2. We start slicing from the first character of the string up to the value provided by num
+        // 3. Simply return the new sliced string
+
+
+        function truncateString(str, num) {
+
+            if (str.length > num) {
+                str = str.slice(0, num) + "...";
+            }
+
+            return str;
+        }
+
+        truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+
+    </script>
+</body>
+
+</html>
