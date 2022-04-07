@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice and Splice</title>
+</head>
+
+<body>
+    <h1>Slice and Splice</h1>
+
+    <script>
+
+        // You are given two arrays and an index.
+        // Copy each element of the first array into the second array, in order.
+        // Begin inserting elements at index n of the second array.
+        // Return the resulting array. The input arrays should remain the same after the function runs.
+
+        // EXAMPLE: frankenSplice([1, 2], ["a", "b"], 1) should return ["a", 1, 2, "b"].
+
+        // 1. Since the exercise is asking us not to modify the original arrays we initialize another empty one, arr3.
+        // 2. We fill arr3 with arr2 values, since that is the base of what we need.
+        // 3. At position "n" of the newly created array we exectue a slice: remove "0" items and add ...arr1 (using the spread operator).
+        // 4. RETURN OF THE MAG
+
+        function frankenSplice(arr1, arr2, n) {
+
+            let arr3 = [];
+
+            for (let num of arr2) {
+                arr3.push(num);
+            }
+
+            arr3.splice(n, 0, ...arr1);
+
+            return arr3;
+        }
+
+        console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+
+
+    </script>
+
+</body>
+
+</html>
