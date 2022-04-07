@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutations</title>
+</head>
+
+<body>
+    <h1>Mutations</h1>
+
+
+    <script>
+        /* Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+        For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+        The arguments ["hello", "hey"] should return false because the string hello does not contain a y.
+        Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.*/
+
+        // 1. We initialize the condition we want to return and we assume it is true.
+        // 2. We convert each word in the array to lowercase and at the same time we convert each word into an array of characters.
+        // 3. Outer loop -> 
+
+        function mutation(arr) {
+
+            let condition = true;
+
+            for (let word of arr) {
+                arr[arr.indexOf(word)] = word.toLowerCase().split("");
+            }
+
+            for (let i = 1; i < arr.length; i++) {
+
+                for (let j = 0; j < arr[i].length; j++) {
+
+                    if (arr[0].indexOf(arr[i][j]) < 0) {
+                        condition = false;
+                    }
+                }
+            }
+
+            return condition;
+        }
+
+        console.log(mutation(["hello", "neo"]));
+
+
+
+    </script>
+</body>
+
+</html>
