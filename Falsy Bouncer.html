@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falsy Bouncer</title>
+</head>
+
+<body>
+    <h1>Falsy Bouncer</h1>
+
+    <script>
+
+        // Remove all falsy values from an array.
+        // Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+        // Hint: Try converting each value to a Boolean.
+
+        // EXAMPLE: bouncer([7, "ate", "", false, 9]) should return [7, "ate", 9].
+        // EXAMPLE: bouncer([false, null, 0, NaN, undefined, ""]) should return [].
+
+        // 1. We just filter out all the falsy element and return the array.
+        // 2. With array.filter we go through each element in the arr and if the element passes the test it stays in the array otherwise it gets filtered out.
+        // 3. RETURN OF THE MAG!!
+
+
+        function bouncer(arr) {
+
+            arr = arr.filter((element) => element)
+
+            return arr;
+        }
+
+        console.log(bouncer([7, "ate", "", false, 9]));
+
+
+    </script>
+
+</body>
+
+</html>
