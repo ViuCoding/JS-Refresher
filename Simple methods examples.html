@@ -29,6 +29,26 @@
       console.log("The color of my bike is: " + myBike.color);
       console.log(myBike.calculateSpeed(99));
       console.log(myBike["calculateSpeed"](18));
+
+      const simpleMath = {
+        sum(x, y) {
+          return x + y;
+        },
+        subtract(x, y) {
+          return x - y;
+        },
+        multiply(x, y) {
+          return x * y;
+        },
+        divide(x, y) {
+          return x / y;
+        },
+      };
+
+      console.log(simpleMath.sum(2, 2));
+      console.log(simpleMath.subtract(10, 2));
+      console.log(simpleMath.multiply(10, 2));
+      console.log(simpleMath.divide(20, 2));
     </script>
   </body>
 </html>
