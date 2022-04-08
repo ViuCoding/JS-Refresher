@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions as Return value</title>
+  </head>
+  <body>
+    <h1>Functions as Return value</h1>
+
+    <script>
+      // Let's say we want to create a function that determines if a number is between a min value and a max value.
+      // We can create this function that returns another function itself.
+      // To make use of the nameless function within we must capture its value in a variable and call it with its arguments.
+
+      function findBetween(min, max) {
+        return function (number) {
+          return number >= min && number <= max;
+        };
+      }
+
+      let isChild = findBetween(0, 18);
+      console.log("is child is: " + isChild(16) + ", because we called it with a 16.");
+
+      let isAdult = findBetween(19, 70);
+      console.log("is adult is: " + isAdult(71) + ", because we called it with a 71.");
+
+      let isSenior = findBetween(71, 150);
+      console.log("is senior is: " + isSenior(146) + ", because we called it with a 146.");
+    </script>
+  </body>
+</html>
