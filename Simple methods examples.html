@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>METHODs Man 1</title>
+  </head>
+  <body>
+    <h1>METHODs Man 1</h1>
+
+    <script>
+      // What are methods afterall??
+      // They are simply a function stored inside an object as a property.
+      // Being a property we can access it with the classid dot notation or, even if it is weird with the brackets notation.
+
+      const myBike = {
+        color: "red",
+        model: "trek",
+        calculateSpeed(km) {
+          if (km < 20) {
+            return console.log("Easy does it Tiger, you are going below 20km/h.");
+          } else {
+            return console.log("Wuaaaa, you are ready for MotoGP");
+          }
+        },
+      };
+
+      console.log("The color of my bike is: " + myBike.color);
+      console.log(myBike.calculateSpeed(99));
+      console.log(myBike["calculateSpeed"](18));
+    </script>
+  </body>
+</html>
