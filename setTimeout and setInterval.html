@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout and setInterval</title>
+  </head>
+  <body>
+    <h1>setTimeout and setInterval</h1>
+
+    <script>
+      // setTimeout is used to postpone the execution of some expression.
+      // It accepts 2 arguments, one function and a number of milliseconds (3000) = 3seconds
+      console.log("HELLOOOOO!!!");
+
+      setTimeout(() => {
+        console.log("ARE YOU STILL THEREE???");
+      }, 4000); // We will wait 4 seconds for the output to show up in the console.
+
+      // setInterval will run a function (that we pass as an argument) every x number of milliseconds.
+
+      //setInterval(() => {
+      //  console.log(Math.random());
+      //}, 2000); // the function used as the first argument will run every 2 seconds.
+
+      // HOW DO WE STOP IT THOUGH??
+      // Each time we run the setInterval function it returns an "id" value.
+      // We must store that id in a variable and then call clearInterval(id) in order to stop it.
+
+      let id = setInterval(() => {
+        console.log(Math.floor(Math.random() * 10) + 1);
+      }, 1000); // we store the id in a variable.
+
+      setTimeout(() => {
+        clearInterval(id); // we use that id to call clearInterval and stop it from executing further.
+      }, 10000);
+
+      // The output of these 2 expressions is:
+      // 1. A random number is being printed each second (setInterval call).
+      // 2. setTimeout will wait 10 seconds and then call clearInterval and stop the execution.
+    </script>
+  </body>
+</html>
