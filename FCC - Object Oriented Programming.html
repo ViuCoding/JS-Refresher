@@ -27,8 +27,83 @@
         this.nick = nick;
       }
 
-      let jackie = new Birdie("lorelai", "yellow", "nsivata");
+      let jackie = new Birdie("legolas", "yellow", "nsivata");
       console.log(jackie);
+
+      // We can use the method "instanceof" to test if a certain object has been created with a certain constructor. In this case, the expression will return true.
+      console.log(jackie instanceof Birdie);
+
+      // We can check if an object has a certain property using the hasOwnProperty method and looking for a property by its name.
+      console.log(jackie.hasOwnProperty("nick"));
+
+      // Let's create an empty array and fill it with the object's properties.
+      let objProps = [];
+
+      for (let prop in jackie) {
+        if (jackie.hasOwnProperty(prop)) {
+          objProps.push(prop);
+        }
+      }
+
+      console.log("objProps array is: " + objProps);
+      // THIS IS WHAT WE'LL SEE IN THE CONSOLE: objProps array is: name,color,nick;
+
+      // IF WE HAVE A PROPERTY THAT IS CONSISTENT IN EVERY ISTANCE OF THE OBJECT WE CAN ADD IT TO THE OBJECT'S PROTOTYPE.
+      // THIS WAY WE AVOID HAVING A COPY OF THE SAME PROPERTY FOR EACH ISTANCE OF AN OBJECT.
+
+      function Bear(name, color) {
+        this.name = name;
+        this.color = color;
+        //this.numLegs = 4; // SINCE numLegs IS GOING TO BE CONSISTENT IN EVERY ISTANCE OF THE BEAR OBJECT WE WILL ADD IT TO ITS PROTOTYPE.
+      }
+      Bear.prototype.numLegs = 4;
+
+      let yogi = new Bear("Yogi", "Teal");
+      console.log(yogi.numLegs); // THIS WILL OUTPUT 4.
+
+      // We have now seen two kinds of properties: own properties and prototype properties. Own properties are defined directly on the object instance itself. And prototype properties are defined on the prototype.
+
+      // HERE'S ANOTHER WAY TO CHECK IF AN OBJECT HAS BEEN CREATED USING A CERTAIN CONSTRUCTOR.
+
+      function isBearFamily(candidate) {
+        if (candidate.constructor === Bear) {
+          return "Yep, it's a bear";
+        } else {
+          return "It's an impostor, GET HIM!!";
+        }
+      }
+
+      console.log(isBearFamily(yogi)); // THIS EXPRESSION WILL RETURN "Yep, it's a bear", BECAUSE YOGI WAS INDEED CREATED USING THE BEAR CONSTRUCTOR.
+
+      // WE CAN ALSO ADD METHODS TO A CONSTRUCTOR PROTOTYPE. NOW ALL ISTANCES OF BEAR WILL HAVE THE eat() METHOD.
+      // DOING SO BECOMES VERY SLOW AND TEDIOUS QUICKLY. WE CAN DO THIS THE QUICK WAY, CREATING AND OBJECT WITH ALL THE PROPERTIES WE WANNA ADD TO THE PROTOTYPE.
+
+      Bear.prototype.eat = function () {
+        console.log("GNAM GNAM GNAM");
+      };
+
+      // Bear.prototype = {
+      //   tails: 1,
+      //   paws: 4,
+      //   describe() {
+      //     console.log("I AM A BEAR AND MY NAME IS " + this.name);
+      //   },
+      // };
+
+      let bubu = new Bear("Bubu", "Purple");
+      console.log(bubu.describe());
+
+      // There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property!
+      // To fix this, whenever a prototype is manually set to a new object, remember to define the constructor property:
+
+      Bear.prototype = {
+        constructor: Bear, // <--- LIKE SO!
+        tails: 1,
+        paws: 4,
+        describe() {
+          console.log("I AM A BEAR AND MY NAME IS " + this.name);
+        },
+      };
     </script>
   </body>
 </html>
