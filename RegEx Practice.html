@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegEx Practice</title>
+  </head>
+  <body>
+    <h1>RegEx Practice</h1>
+
+    <script>
+      // First technique we can use is the ".test()" method.
+      // It takes a RegEx and it applies it to a string (inside the parenthesis)
+
+      let frase = "mascarpone bollente";
+      let regEx1 = /masca/;
+      let result1 = regEx1.test(frase);
+      console.log(result1); // This expression will return TRUE since /masca/ can be found in the string "mascarpone bollente".
+    </script>
+  </body>
+</html>
