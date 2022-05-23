@@ -16,7 +16,22 @@
       let frase = "mascarpone bollente";
       let regEx1 = /masca/;
       let result1 = regEx1.test(frase);
-      console.log(result1); // This expression will return TRUE since /masca/ can be found in the string "mascarpone bollente".
+      console.log("Result 1 is: " + result1); // This expression will return TRUE since /masca/ can be found in the string "mascarpone bollente".
+      // Remember!!! The match must be perfect, character by character if it was /MaScA/ the expression would return false.
+
+      // This is great but we can only use it to match one single pattern.
+      // Enter the OR | operator. Using it we can match for multiple patterns.
+      // The regEx could be /dog|cat|fish|bird/ and the test method would be able to find out if one of the regExs can be found in the string.
+
+      // OK, the .test() method returns either true or false if the regex is found or not.
+      // WE can also use the .match() method that insted returns an Array with the matches found in the expression.
+      // Let's test it out.
+      // REMEMBER, the order is the opposite. The string we are "analizing" now goes first, and our RegEx goes inside the paranthesis.
+
+      let frase2 = "The rain in SPAIN stays mainly in the plain";
+      let regEx2 = /ain/i;
+      let result2 = frase2.match(regEx2);
+      console.log(result2);
     </script>
   </body>
 </html>
