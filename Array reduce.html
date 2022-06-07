@@ -8,5 +8,47 @@
   </head>
   <body>
     <h1>Array Reduce</h1>
+
+    <script>
+      // array.reduce is used to reduce/condense multiple values into a single value
+      // It doesn't have to be only a single numerical/string value
+      // It can also reduce an array into a single object or another array or even a function
+      // In fact one of the common uses of array.reduce is to reduce multiple arrays into a single array
+
+      const tasks = [
+        {
+          name: "Gym",
+          duration: 150,
+        },
+        {
+          name: "Study",
+          duration: 100,
+        },
+        {
+          name: "Gaming",
+          duration: 50,
+        },
+      ];
+
+      // For example we can use array.reduce to add up all the values of "duration" into a single one
+      // We could use a good old for loop to do so
+
+      let total = 0;
+      for (let i = 0; i < tasks.length; i++) {
+        total += tasks[i].duration;
+      }
+      console.log("total duration with for loop is " + total);
+
+      // But where is the fun in that? We want to use the ES6 features mate!
+      let totalTimeWrong = tasks.reduce((total, task) => total + task.duration);
+      console.log("totalTimeWrong with reduce is " + totalTimeWrong);
+      // The "total" parameter in this function is the so called "ACCUMULATOOOOOOR".
+      // It works as the previous total variable in the for loop and each iteration its value gets updated.
+      // The problem in this case is that we DID NOT provide a starting value to the "total" parameter so the reduce function interprets the "total" parameter as an Object and ends up concatenating the different values into a string instead of adding it up into a number.
+      // To avoid this issue We must provide a starting value for the "total" parameter. Doing so we will let JS know that total is number and we want to add to it with each iteration
+
+      let totalTimeCorrect = tasks.reduce((total, task) => total + task.duration, 0);
+      console.log("totalTimeCorrect with reduce is " + totalTimeCorrect);
+    </script>
   </body>
 </html>
