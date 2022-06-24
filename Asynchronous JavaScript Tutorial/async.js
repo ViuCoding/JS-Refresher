@@ -24,7 +24,7 @@ const getLuke = (URL) => {
 };
 
 getLuke("https://swapi.dev/api/people/1") // force break
-  .then((data) => data.json())
+  .then((data) => data.json()) // This returns a promise and with the next .then we grab that data and we can work with it.
   .then((json) => {
     console.log(json);
     return getLuke("https://swapi.dev/api/planets/2");
